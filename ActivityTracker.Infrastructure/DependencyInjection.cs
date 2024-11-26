@@ -1,4 +1,6 @@
-﻿using ActivityTracker.Infrastructure.Data;
+﻿using ActivityTracker.Domain.Abstractions;
+using ActivityTracker.Infrastructure.Data;
+using ActivityTracker.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +15,8 @@ namespace ActivityTracker.Infrastructure
             {
                 options.UseNpgsql("Host=localhost;Database=ActivityTracker;Username=postgres;Password=Abhi@0448");
             });
+
+            service.AddScoped<IUserRepository, UserRepository>();
 
             return service;
         }

@@ -7,6 +7,7 @@ namespace ActivityTracker.Application
     {
         public static IServiceCollection AddApplicationDI(this IServiceCollection service)
         {
+            service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
             return service;
         }
     }
