@@ -9,6 +9,6 @@ public interface IUserRepository
     Task<User> GetUserByIdAsync(Guid id);
     Task<User> AddUserAsync(User user);
     Task<User> UpdateUserAsync(User user);
-    Task<User> DeleteUserAsync(Guid userId);
+    Task<bool> DeleteUserAsync(Guid userId);
     #endregion
 }
