@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR.NotificationPublishers;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace ActivityTracker.Application
@@ -7,7 +8,11 @@ namespace ActivityTracker.Application
     {
         public static IServiceCollection AddApplicationDI(this IServiceCollection service)
         {
-            service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
+            service.AddMediatR(cfg =>{
+                cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+                cfg.NotificationPublisher = new TaskWhenAllPublisher();
+            });
+           
             return service;
         }
     }
