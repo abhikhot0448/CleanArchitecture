@@ -9,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//builder.Services.Configure<ConnectionStringOptions>(builder.Configuration); 
 builder.Services.AddAppDI(builder.Configuration);
 
 var app = builder.Build();
