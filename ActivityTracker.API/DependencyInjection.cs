@@ -1,5 +1,6 @@
 ﻿using ActivityTracker.Application;
 using ActivityTracker.Infrastructure;
+using ActivityTracker.Domain;
 
 namespace ActivityTracker.API
 {
@@ -8,7 +9,8 @@ namespace ActivityTracker.API
         public static IServiceCollection AddAppDI(this IServiceCollection service,IConfiguration configuration)
         {
             service.AddApplicationDI()
-                .AddInfrastructureDI(configuration);
+                .AddInfrastructureDI()
+                .AddDomainDI(configuration);
 
             return service;
         }

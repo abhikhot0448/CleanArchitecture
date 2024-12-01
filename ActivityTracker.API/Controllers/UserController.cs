@@ -17,10 +17,7 @@ public class UserController : ControllerBase
     #endregion
 
     #region Constructor
-    public UserController(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
+    public UserController(IMediator mediator) => _mediator = mediator;
     #endregion
 
     #region Methods

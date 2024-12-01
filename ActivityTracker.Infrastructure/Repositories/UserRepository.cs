@@ -43,8 +43,8 @@ public class UserRepository : IUserRepository
             userToUpdate.Name = user.Name;
             userToUpdate.Email = user.Email;
             userToUpdate.Password = user.Password;
+            _dbContext.Users.Update(userToUpdate);
             await _dbContext.SaveChangesAsync();
-            _dbContext.Users.Update(user);
         }
         return user;
     }
