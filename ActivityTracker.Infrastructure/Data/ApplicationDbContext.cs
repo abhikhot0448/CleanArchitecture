@@ -12,6 +12,9 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<User> Users {get; set; } 
+    public DbSet<Goal> Goals {get; set; } 
+    public DbSet<Activity> Activities {get; set; }
+    public DbSet<Image> Images {get; set; }
 
 }
 
