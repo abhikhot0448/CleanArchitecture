@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Activities\Events\" />
+    <Folder Include="Goals\Events\" />
+    <Folder Include="Images\Events\" />
     <Folder Include="Users\Queries\" />
   </ItemGroup>
 
